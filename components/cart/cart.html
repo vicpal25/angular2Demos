@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Product Manager</h1>
+  <div class="row text-center">
+      <div class="col-md-2 col-sm-5" *ng-for="#product of result">
+          <div class="thumbnail">
+            <img src="assets/cartimages/{{product.image}}"  />
+              <div class="caption">
+                  <h3>{{product.title}}</h3>
+                  <p>{{product.dsc}}</p>
+                  <h4>{{product.price}}</h4>
+                  <p>
+                      <button class="btn btn-primary" (click)="addCart(product)">Add To Cart</button>
+                      <a href="#" class="btn btn-default">More Info</a>
+                  </p>
+              </div>
+          </div>
+
+      </div>
+
+  </div>
+
+  <h1>Add</h1>
+
+  <div class="row">
+
+          <div class="form-group">
+            <label for="email">Name:</label>
+            <input #name placeholder="name" />
+          </div>
+          <div class="form-group">
+            <label for="productid">Product ID:</label>
+            <input #productid placeholder="productid" type="number" />
+          </div>
+          <div class="form-group">
+            <label for="productid">Description:</label>
+            <input #dsc placeholder="dsc" />
+          </div>
+          <div class="form-group">
+            <label for="productid">Price:</label>
+            <input #price placeholder="price" type="number" />
+          </div>
+          <div class="form-group">
+            <label for="image">Image:</label>
+            <input #image placeholder="image" />
+          </div>
+          <div class="form-group">
+            <label for="id">ID:</label>
+            <input #id placeholder="id" type="number" />
+          </div>
+
+          <button class="btn btn-primary btn-xs" (click)="addProduct(name.value,productid.value, dsc.value, price.value, image.value, id.value)">Add Contact</button>
+
+
+  </div>
+
+
+
+</div>

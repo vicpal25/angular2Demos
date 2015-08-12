@@ -1,0 +1,22 @@
+{
+  "products" : [
+    { "title": "Isaac Likes Billy Jeans",
+      "image": "item_1.jpeg",
+      "dsc": "Awesome jeans that rock!",
+      "active": 1,
+      "price": 100
+    },
+    { "title": "Expensive bit pocket jeans",
+      "image": "item_2.jpeg",
+      "dsc": "Product Description of another set of jeans",
+      "active": 1,
+      "price": 250
+    },
+    { "title": "Another blah blah jeans",
+      "name": "item_3.jpeg",
+      "dsc": "Cool pants",
+      "active": 1,
+      "price": 20
+    }
+  ]
+}
