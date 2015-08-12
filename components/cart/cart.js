@@ -19,7 +19,13 @@ var Cart = (function () {
         http.get('http://0.0.0.0:3000/api/products').toRx().map(function (res) { return res.json(); }).subscribe(function (result) { return _this.result = result; });
     }
     Cart.prototype.addProduct = function (name, product_id, dsc, price, image, id) {
-        return this.http.post('http://0.0.0.0:3000/api/products', JSON.stringify(new item_1.Item(name, product_id, dsc, price, image, id))).toRx().map(function (res) { return res.json(); });
+        return this.http.post('http://0.0.0.0:3000/api/products', JSON.stringify(new item_1.Item(name, product_id, dsc, price, image, id)), {
+            headers: new angular2_1.Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .toRx()
+            .map(function (res) { return res.json(); });
     };
     Cart = __decorate([
         angular2_1.Component({
