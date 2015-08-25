@@ -16,6 +16,7 @@ var Cart = (function () {
         var _this = this;
         this.http = http;
         this.items = [];
+        this.visible = false;
         http.get('http://0.0.0.0:3000/api/products').toRx().map(function (res) { return res.json(); }).subscribe(function (result) { return _this.result = result; });
     }
     Cart.prototype.addProduct = function (name, product_id, dsc, price, image, id) {
@@ -26,6 +27,7 @@ var Cart = (function () {
         })
             .toRx()
             .map(function (res) { return res.json(); });
+        this.visible = true;
     };
     Cart = __decorate([
         angular2_1.Component({
@@ -33,7 +35,7 @@ var Cart = (function () {
         }),
         angular2_1.View({
             templateUrl: './components/cart/cart.html',
-            directives: [angular2_1.NgFor]
+            directives: [angular2_1.NgFor, angular2_1.CSSClass]
         }), 
         __metadata('design:paramtypes', [angular2_1.Http])
     ], Cart);

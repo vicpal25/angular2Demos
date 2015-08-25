@@ -19,4 +19,5 @@ export class Greeting {
     createGreeting(){
         this.greeting = 'Greetings, ' + this.name;
     }
+    
 }

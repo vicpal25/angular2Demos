@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Product Manager</h1>
+  <!-- <h1>Product Manager</h1>
   <div class="row text-center">
       <div class="col-md-2 col-sm-5" *ng-for="#product of result">
           <div class="thumbnail">
@@ -19,9 +19,9 @@
 
   </div>
 
-  <h1>Add</h1>
+  <h1>Add</h1> -->
 
-  <div class="row">
+  <div class="row" [class]="{active: active == true}">
 
           <div class="form-group">
             <label for="email">Name:</label>
@@ -49,7 +49,6 @@
           </div>
 
           <button class="btn btn-primary btn-xs" (click)="addProduct(name.value,productid.value, dsc.value, price.value, image.value, id.value)">Add Contact</button>
-
 
   </div>
 
