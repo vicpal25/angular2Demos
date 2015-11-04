@@ -1,7 +1,8 @@
+
 <div class="container">
-  <!-- <h1>Product Manager</h1>
+  <h1>Product Manager</h1>
   <div class="row text-center">
-      <div class="col-md-2 col-sm-5" *ng-for="#product of result">
+      <div class="col-md-2 col-sm-5" *ng-for="#product of result"  (productlinechanged)="refresh()">
           <div class="thumbnail">
             <img src="assets/cartimages/{{product.image}}"  />
               <div class="caption">
@@ -19,7 +20,7 @@
 
   </div>
 
-  <h1>Add</h1> -->
+  <h1>Add</h1>
 
   <div class="row" [class]="{active: active == true}">
 

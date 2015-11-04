@@ -1,10 +1,8 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
-    switch (arguments.length) {
-        case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
-        case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
-        case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
-    }
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
@@ -17,13 +15,16 @@ var Cart = (function () {
         this.http = http;
         this.items = [];
         this.visible = false;
-        http.get('http://0.0.0.0:3000/api/products').toRx().map(function (res) { return res.json(); }).subscribe(function (result) { return _this.result = result; });
+        http.get('http://0.0.0.0:3100/api/products').toRx().map(function (res) { return res.json(); }).subscribe(function (result) { return _this.result = result; });
     }
+    Cart.prototype.productlinechanged = function () {
+        console.log("triggered");
+    };
     Cart.prototype.addProduct = function (name, product_id, dsc, price, image, id) {
-        return this.http.post('http://0.0.0.0:3000/api/products', JSON.stringify(new item_1.Item(name, product_id, dsc, price, image, id)), {
-            headers: new angular2_1.Headers({
-                'Content-Type': 'application/json'
-            })
+        var headers = new angular2_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('http://0.0.0.0:3100/api/products', JSON.stringify(new item_1.Item(name, product_id, dsc, price, image, id, true)), {
+            headers: headers
         })
             .toRx()
             .map(function (res) { return res.json(); });

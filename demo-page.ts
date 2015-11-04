@@ -11,6 +11,7 @@ import {IgnoreBindings} from './components/non-bindable/non-bindable';
 import {Greeting} from './components/greeting/greeting';
 import {HttpSample} from './components/http/http';
 import {Cart} from './components/cart/cart';
+import {Tabs} from './components/tabs/tabs';
 
 @Component({
     selector: 'demo-page'
@@ -18,17 +19,17 @@ import {Cart} from './components/cart/cart';
 
 @View({
     templateUrl: './demo-page.html',
-    directives: [HttpSample, Greeting, ContactList, TreeView, BoundTextbox, Grid, CoreDirectives, IgnoreBindings, NgIf, CSSClass, Cart]
+    directives: [HttpSample, Greeting, ContactList, TreeView, BoundTextbox, Grid, CoreDirectives, IgnoreBindings, NgIf, CSSClass, Cart, Tabs]
 })
 
 export class DemoPage {
+
     directories: Array<Directory>;
     people: Array<Person>;
     columns: Array<Column>;
     currentComponent: string;
 
     constructor(){
-
         this.currentComponent = 'grid';
         this.loadDirectories();
         this.people = this.getPeople();
@@ -71,7 +72,6 @@ export class DemoPage {
         const fall2014 = new Directory('Fall 2014',[],['image1.jpg','image2.jpg','image3.jpg']);
         const summer2014 = new Directory('Summer 2014',[],['image10.jpg','image20.jpg','image30.jpg']);
         const pics = new Directory('Pictures',[summer2014,fall2014],[]);
-
         const music = new Directory('Music',[],['song1.mp3','song2.mp3']);
 
         this.directories = [pics,music];

@@ -20,24 +20,29 @@ export class Cart {
     visible : Boolean = false;
 
     constructor(public http: Http){
-        http.get('http://0.0.0.0:3000/api/products').toRx().map(res => res.json()).subscribe(result => this.result = result);
+        http.get('http://0.0.0.0:3100/api/products').toRx().map(res => res.json()).subscribe(result => this.result = result);
     }
 
+    productlinechanged() {
+       console.log("triggered");
+    }
 
     addProduct(name:string, product_id:number, dsc:string, price:number, image:string, id:string) {
 
-     return this.http.post('http://0.0.0.0:3000/api/products',
+      var headers = new Headers();
+      headers.append('Content-Type', 'application/json');
 
-         JSON.stringify(new Item(name,product_id, dsc, price, image, id)),
+     return this.http.post('http://0.0.0.0:3100/api/products',
+
+         JSON.stringify(new Item(name,product_id, dsc, price, image, id, true)),
          {
-           headers: new Headers({
-             'Content-Type': 'application/json'
-           })
+           headers: headers
          })
          .toRx()
          .map(res => res.json());
          this.visible = true;
 
    }
+
 
 }
