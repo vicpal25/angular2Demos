@@ -5,6 +5,7 @@ import{DemoPage} from './demo-page';
 import{About} from './components/about/about';
 import {routerInjectables, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 import {RouterLink, RouteConfig, Router, RouterOutlet, Location, RouteParams} from 'angular2/router';
+import {DataService} from './services/dataservice';
 
 @Component({
    selector: 'demo-app'

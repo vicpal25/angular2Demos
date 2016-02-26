@@ -3,20 +3,36 @@
 
     <div>
         <div class="list-group col-md-3">
-            <!-- <a (click)="selectComponent('grid')" [class]="getActiveClass('grid')" class="list-group-item">Data Grid</a>
+            <a (click)="selectComponent('tabs')" [class]="getActiveClass('tabs')" class="list-group-item">Tabs</a>
+            <a (click)="selectComponent('grid')" [class]="getActiveClass('grid')" class="list-group-item">Data Grid</a>
             <a (click)="selectComponent('http')" [class]="getActiveClass('http')" class="list-group-item">Http</a>
             <a (click)="selectComponent('treeview')" [class]="getActiveClass('treeview')" class="list-group-item">Recursive tree view</a>
             <a (click)="selectComponent('contact-list')" [class]="getActiveClass('contact-list')" class="list-group-item">Interactive contact list</a>
             <a (click)="selectComponent('bound-textbox')" [class]="getActiveClass('bound-textbox')" class="list-group-item">Bound Textbox</a>
             <a (click)="selectComponent('core-directives')" [class]="getActiveClass('core-directives')" class="list-group-item">Core Directives</a>
             <a (click)="selectComponent('non-bindable')" [class]="getActiveClass('non-bindable')" class="list-group-item">Non Bindable</a>
-            <a (click)="selectComponent('greeting')" [class]="getActiveClass('greeting')" class="list-group-item">Greeting</a> -->
+            <a (click)="selectComponent('greeting')" [class]="getActiveClass('greeting')" class="list-group-item">Greeting</a>
             <a (click)="selectComponent('cart')" [class]="getActiveClass('cart')" class="list-group-item">Cart</a>
         </div>
 
         <div class="col-md-9">
 
-            <!-- <div class="panel panel-default" *ng-if="isActive('grid')">
+          <div class="panel panel-default" *ng-if="isActive('tabs')">
+              <div class="panel-heading">
+                  <h3 class="panel-title">Tabs</h3>
+              </div>
+              <div class="panel-body">
+
+                <tabs>
+                  <p>Some random HTML with some random content</p>
+                </tabs>
+
+
+              </div>
+          </div>
+
+
+            <div class="panel panel-default" *ng-if="isActive('grid')">
                 <div class="panel-heading">
                     <h3 class="panel-title">Data Grid</h3>
                 </div>
@@ -110,7 +126,7 @@
                     </div>
                     <greeting [name]="'Joe Smith'"></greeting>
                 </div>
-            </div> -->
+            </div>
 
             <div class="panel panel-default" *ng-if="isActive('cart')">
                 <div class="panel-heading">
